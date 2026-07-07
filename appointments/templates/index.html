@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3 text-center">
+    <h1 class="display-5 fw-bold">Smart Healthcare Appointment Management System</h1>
+    <p class="fs-4">Book medical appointments with professional healthcare providers easily.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'appointment_list' %}">Book an Appointment Now</a>
+</div>
+<h2 class="text-center my-4">Our Services</h2>
+<div class="row text-center">
+    <div class="col-md-4 mb-3">
+        <div class="card p-3 shadow-sm"><h3>24/7 Availability</h3><p>Get round-the-clock consultations with clinical specialists.</p></div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card p-3 shadow-sm"><h3>Expert Doctors</h3><p>Connect with highly qualified medical practitioners.</p></div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card p-3 shadow-sm"><h3>Instant Booking</h3><p>Manage, reschedule, or cancel appts with ease.</p></div>
+    </div>
+</div>
+{% endblock %}

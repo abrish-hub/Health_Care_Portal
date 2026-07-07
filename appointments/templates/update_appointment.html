@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card p-4 shadow-sm">
+            <h4 class="mb-3">Modify Appointment Context</h4>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3"><label class="form-label">Patient Name</label><input type="text" name="patient_name" value="{{ appointment.patient_name }}" class="form-control" required></div>
+                <div class="mb-3"><label class="form-label">Email</label><input type="email" name="email" value="{{ appointment.email }}" class="form-control" required></div>
+                <div class="mb-3"><label class="form-label">Doctor Name</label><input type="text" name="doctor_name" value="{{ appointment.doctor_name }}" class="form-control" required></div>
+                <div class="mb-3"><label class="form-label">Appointment Date</label><input type="date" name="appointment_date" value="{{ appointment.appointment_date|date:'Y-m-d' }}" class="form-control" required></div>
+                <div class="mb-3"><label class="form-label">Symptoms</label><textarea name="symptoms" class="form-control" rows="3" required>{{ appointment.symptoms }}</textarea></div>
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary w-100">Save Changes</button>
+                    <a href="{% url 'appointment_list' %}" class="btn btn-secondary w-100">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
